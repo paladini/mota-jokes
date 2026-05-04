@@ -131,26 +131,3 @@ php.ini_get("display_errors")
 php.semicolon("$mota = 'meme'")
 php.composer_install("mota/humor")
 ```
-
-## Publicação no PyPI
-
-O nome `mota` já existe no PyPI, então este projeto usa `mota-jokes` como nome de distribuição. Isso não afeta o import:
-
-```bash
-pip install mota-jokes
-```
-
-```python
-from mota import jokes, php
-```
-
-Para publicar uma nova versão:
-
-```bash
-python -m pip install --upgrade build twine
-python -m build
-python -m twine check dist/*
-python -m twine upload dist/*
-```
-
-Antes de publicar, lembre-se de incrementar a versão em `pyproject.toml` e `src/mota/__init__.py`, porque o PyPI não permite reenviar a mesma versão.
