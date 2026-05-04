@@ -31,6 +31,36 @@ _JOKES: tuple[Joke, ...] = (
         tags=("clássica", "faculdade", "crime-de-baixa-gravidade"),
     ),
     Joke(
+        id="docker",
+        setup="O Mota colocou a piada ruim no Docker.",
+        punchline="Agora ela roda igual em qualquer máquina, infelizmente.",
+        tags=("devops", "ambiente", "docker"),
+    ),
+    Joke(
+        id="cache",
+        setup="O Mota disse que tinha parado com as piadas ruins.",
+        punchline="Era cache. Limpou e voltou pior.",
+        tags=("cache", "infra", "mentira"),
+    ),
+    Joke(
+        id="regex",
+        setup="O Mota tentou explicar a piada com regex.",
+        punchline="Ninguém entendeu, mas todo mundo ficou com medo de mexer.",
+        tags=("regex", "legado", "python"),
+    ),
+    Joke(
+        id="prod",
+        setup="O Mota contou uma piada direto em produção.",
+        punchline="Funcionou na máquina dele e caiu no grupo da firma.",
+        tags=("produção", "deploy", "risco-social"),
+    ),
+    Joke(
+        id="null",
+        setup="A piada do Mota voltou None.",
+        punchline="Mesmo assim conseguiu não ter valor.",
+        tags=("python", "none", "vazio"),
+    ),
+    Joke(
         id="import",
         setup="O Mota foi contar uma piada boa.",
         punchline="Deu ImportError: cannot import name 'humor'.",
@@ -71,6 +101,24 @@ _JOKES: tuple[Joke, ...] = (
         setup="O Mota adicionou type hints na piada.",
         punchline="Agora ela é ruim de forma estaticamente verificável.",
         tags=("typing", "python"),
+    ),
+    Joke(
+        id="sql",
+        setup="O Mota tentou normalizar a piada.",
+        punchline="Agora ela tem três tabelas, duas joins e nenhum sentido.",
+        tags=("sql", "banco-de-dados", "normalização"),
+    ),
+    Joke(
+        id="senior",
+        setup="O Mota chamou a piada ruim de decisão arquitetural.",
+        punchline="Aí ninguém teve coragem de refatorar.",
+        tags=("arquitetura", "senioridade", "legado"),
+    ),
+    Joke(
+        id="frontend",
+        setup="O Mota colocou a punchline atrás de um loading.",
+        punchline="A experiência piorou, mas agora tem skeleton.",
+        tags=("frontend", "ux", "loading"),
     ),
 )
 

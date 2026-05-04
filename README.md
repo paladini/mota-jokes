@@ -9,13 +9,6 @@ Ele tem dois módulos de primeira classe:
 - `mota.jokes`: acervo e motor de piadas ruins.
 - `mota.php`: utilidades PHP emocionalmente duvidosas.
 
-```python
-from mota import jokes, php
-
-print(jokes.tell("direito"))
-print(php.composer_install("mota/bom-senso"))
-```
-
 ## Instalação
 
 ```bash
@@ -28,57 +21,9 @@ Para desenvolvimento local:
 python -m pip install -e .
 ```
 
-## Linha de comando
+## Exemplos
 
-Depois de instalar:
-
-```bash
-python -m mota
-python -m mota jokes direito
-python -m mota jokes --search python
-python -m mota php
-python -m mota php framework
-python -m mota php composer mota/bom-senso
-```
-
-Se o diretório de scripts do Python estiver no `PATH`, o comando `mota` também fica disponível diretamente:
-
-```bash
-mota jokes direito
-```
-
-## Uso em Python
-
-```python
-from mota import jokes, php
-
-print(jokes.random())
-print(jokes.explain("direito"))
-print(php.echo())
-```
-
-## API rápida
-
-```python
-jokes.all()
-jokes.random()
-jokes.by_id("direito")
-jokes.tell("direito")
-jokes.search("python")
-jokes.explain("php")
-jokes.audit()
-jokes.cringe_index()
-
-php.echo()
-php.is_php("Python")
-php.translate("print('olá')")
-php.framework()
-php.ini_get("display_errors")
-php.semicolon("$mota = 'meme'")
-php.composer_install("mota/humor")
-```
-
-## Exemplo canônico
+### A piada canônica
 
 ```python
 from mota import jokes
@@ -91,6 +36,100 @@ Saída:
 ```text
 Nossa, bicho, já pensou em fazer Direito?
 Por quê, tô fazendo errado?
+```
+
+### Quando o ambiente entra na piada
+
+```python
+from mota import jokes
+
+print(jokes.tell("docker"))
+```
+
+Saída:
+
+```text
+O Mota colocou a piada ruim no Docker.
+Agora ela roda igual em qualquer máquina, infelizmente.
+```
+
+### Quando o PHP exige respeito
+
+```python
+from mota import php
+
+print(php.composer_install("mota/bom-senso"))
+```
+
+Saída:
+
+```text
+composer require mota/bom-senso
+Pacote instalado. O humor ainda requer configuração manual.
+```
+
+### Quando o problema é só um ponto e vírgula
+
+```python
+from mota import php
+
+print(php.semicolon("$mota = 'meme'"))
+```
+
+Saída:
+
+```text
+$mota = 'meme';
+```
+
+## Linha de comando
+
+Depois de instalar:
+
+```bash
+python -m mota jokes direito
+python -m mota jokes docker
+python -m mota jokes --search python
+python -m mota php framework
+python -m mota php composer mota/bom-senso
+```
+
+Se o diretório de scripts do Python estiver no `PATH`, o comando `mota` também fica disponível diretamente:
+
+```bash
+mota jokes cache
+```
+
+## Uso em Python
+
+```python
+from mota import jokes, php
+
+print(jokes.random())
+print(jokes.explain("regex"))
+print(php.echo())
+```
+
+## API rápida
+
+```python
+jokes.all()
+jokes.ids()
+jokes.random()
+jokes.by_id("prod")
+jokes.tell("cache")
+jokes.search("python")
+jokes.explain("php")
+jokes.audit()
+jokes.cringe_index()
+
+php.echo()
+php.is_php("Python")
+php.translate("print('olá')")
+php.framework()
+php.ini_get("display_errors")
+php.semicolon("$mota = 'meme'")
+php.composer_install("mota/humor")
 ```
 
 ## Publicação no PyPI

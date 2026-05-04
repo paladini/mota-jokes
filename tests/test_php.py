@@ -31,5 +31,12 @@ def test_composer_install_mentions_package():
     assert "configuração" in output
 
 
+def test_composer_install_readme_example():
+    assert php.composer_install("mota/bom-senso") == (
+        "composer require mota/bom-senso\n"
+        "Pacote instalado. O humor ainda requer configuração manual."
+    )
+
+
 def test_ini_get_has_fake_defaults():
     assert "On" in php.ini_get("display_errors")
