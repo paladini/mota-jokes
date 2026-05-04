@@ -1,9 +1,9 @@
 # mota-jokes
 
-Uma biblioteca Python para honrar uma tradicao importante: as piadas ruins do Mota.
+Uma biblioteca Python para honrar uma tradição importante: as piadas ruins do Mota.
 
-O pacote e instalado como `mota-jokes`, mas o import fica como `mota`.
-Ele tem dois modulos de primeira classe:
+O pacote é instalado como `mota-jokes`, mas o import fica como `mota`.
+Ele tem dois módulos de primeira classe:
 
 - `mota.jokes`: acervo e motor de piadas ruins.
 - `mota.php`: utilidades PHP emocionalmente duvidosas.
@@ -39,7 +39,7 @@ print(jokes.explain("direito"))
 print(php.echo())
 ```
 
-## API rapida
+## API rápida
 
 ```python
 jokes.all()
@@ -59,9 +59,9 @@ php.semicolon("$mota = 'meme'")
 php.composer_install("mota/humor")
 ```
 
-## Publicacao no PyPI
+## Publicação no PyPI
 
-O nome `mota` ja existe no PyPI, entao este projeto usa `mota-jokes` como nome de distribuicao. Isso nao afeta o import:
+O nome `mota` já existe no PyPI, então este projeto usa `mota-jokes` como nome de distribuição. Isso não afeta o import:
 
 ```bash
 pip install mota-jokes
@@ -79,4 +79,4 @@ python -m build
 python -m twine upload dist/*
 ```
 
-Antes de publicar, troque os links em `pyproject.toml` para o repositorio real.
+Antes de publicar, troque os links em `pyproject.toml` para o repositório real.

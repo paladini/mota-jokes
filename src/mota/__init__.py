@@ -1,4 +1,4 @@
-"""Mota: uma biblioteca para piadas ruins com distribuicao cuidadosamente seria."""
+"""Mota: uma biblioteca para piadas ruins com distribuição cuidadosamente séria."""
 
 from . import jokes, php
 

@@ -1,7 +1,7 @@
-"""Modulo PHP do pacote Mota.
+"""Módulo PHP do pacote Mota.
 
-Nao interpreta PHP. Apenas interpreta a fase da vida em que alguem defende PHP
-com conviccao demais.
+Não interpreta PHP. Apenas interpreta a fase da vida em que alguém defende PHP
+com convicção demais.
 """
 
 from __future__ import annotations
@@ -12,23 +12,23 @@ from random import SystemRandom
 _random = SystemRandom()
 
 _FRAMEWORKS = (
-    "Laravel, porque ate o caos merece fachada bonita.",
-    "Symfony, quando a piada precisa de injecao de dependencia.",
-    "CodeIgniter, preservado em formol e memoria afetiva.",
-    "WordPress, tecnicamente nao era para ser framework, mas tambem tecnicamente funciona.",
+    "Laravel, porque até o caos merece fachada bonita.",
+    "Symfony, quando a piada precisa de injeção de dependência.",
+    "CodeIgniter, preservado em formol e memória afetiva.",
+    "WordPress, tecnicamente não era para ser framework, mas também tecnicamente funciona.",
 )
 
 _ECHOES = (
     "<?php echo 'Pq, to fazendo errado?'; ?>",
     "<?php var_dump('humor'); // string(5) \"ruim\" ?>",
-    "<?php require_once 'bom_senso.php'; // arquivo nao encontrado ?>",
+    "<?php require_once 'bom_senso.php'; // arquivo não encontrado ?>",
     "<?php $mota->contarPiada()->arrependimento(); ?>",
 )
 
 _INI_VALUES = {
-    "display_errors": "On, principalmente em producao, segundo o folclore.",
-    "memory_limit": "-1, porque limite e coisa de linguagem sem fe.",
-    "date.timezone": "America/Sao_Paulo; ajuste tecnico para sofrer no horario certo.",
+    "display_errors": "On, principalmente em produção, segundo o folclore.",
+    "memory_limit": "-1, porque limite é coisa de linguagem sem fé.",
+    "date.timezone": "America/Sao_Paulo; ajuste técnico para sofrer no horário certo.",
     "short_open_tag": "Off, mas a discussao continua ligada.",
 }
 
@@ -40,19 +40,19 @@ def echo() -> str:
 
 
 def is_php(language: str) -> bool:
-    """Descobre se uma linguagem e PHP, inclusive quando ela insiste que mudou."""
+    """Descobre se uma linguagem é PHP, inclusive quando ela insiste que mudou."""
 
     normalized = language.strip().casefold()
     return normalized in {"php", "<?php", "laravel", "wordpress"}
 
 
 def translate(python_code: str) -> str:
-    """Traduz Python para PHP emocionalmente, nao sintaticamente."""
+    """Traduz Python para PHP emocionalmente, não sintaticamente."""
 
     stripped = python_code.strip() or "# nada"
     return (
         "<?php\n"
-        "// Traducao oficial do Mota, certificada por zero comites.\n"
+        "// Tradução oficial do Mota, certificada por zero comitês.\n"
         f"// Python original: {stripped}\n"
         "echo 'Funcionou na minha maquina';\n"
         "?>"
@@ -60,7 +60,7 @@ def translate(python_code: str) -> str:
 
 
 def framework() -> str:
-    """Recomenda um framework PHP com a precisao de uma piada de corredor."""
+    """Recomenda um framework PHP com a precisão de uma piada de corredor."""
 
     return _random.choice(_FRAMEWORKS)
 
@@ -73,7 +73,7 @@ def ini_get(name: str) -> str:
 
 
 def semicolon(line: str) -> str:
-    """Adiciona ponto e virgula com a autoridade moral de quem ja viu PHP demais."""
+    """Adiciona ponto e vírgula com a autoridade moral de quem já viu PHP demais."""
 
     stripped = line.rstrip()
     if stripped.endswith(";"):
@@ -82,7 +82,7 @@ def semicolon(line: str) -> str:
 
 
 def composer_install(package: str = "mota/humor") -> str:
-    """Simula uma instalacao Composer que nao resolve o problema central."""
+    """Simula uma instalação Composer que não resolve o problema central."""
 
     normalized = package.strip() or "mota/humor"
     return (
@@ -92,6 +92,6 @@ def composer_install(package: str = "mota/humor") -> str:
 
 
 def roast() -> str:
-    """Resumo executivo do modulo."""
+    """Resumo executivo do módulo."""
 
-    return "PHP: porque toda amizade merece um ponto e virgula mal resolvido."
+    return "PHP: porque toda amizade merece um ponto e vírgula mal resolvido."
