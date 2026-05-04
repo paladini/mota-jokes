@@ -1,4 +1,4 @@
-"""Piadas ruins do Mota, preservadas em API publica."""
+"""Piadas ruins do Mota, preservadas em API pública."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ _random = SystemRandom()
 
 @dataclass(frozen=True)
 class Joke:
-    """Uma piada ruim, mas com contrato de dados respeitavel."""
+    """Uma piada ruim, mas com contrato de dados respeitável."""
 
     id: str
     setup: str
@@ -26,9 +26,9 @@ class Joke:
 _JOKES: tuple[Joke, ...] = (
     Joke(
         id="direito",
-        setup="Nossa bicho, ja pensou em fazer Direito?",
-        punchline="Pq, to fazendo errado?",
-        tags=("classica", "faculdade", "crime-de-baixa-gravidade"),
+        setup="Nossa bicho, já pensou em fazer Direito?",
+        punchline="Pq, tô fazendo errado?",
+        tags=("clássica", "faculdade", "crime-de-baixa-gravidade"),
     ),
     Joke(
         id="import",
@@ -95,11 +95,11 @@ def by_id(joke_id: str) -> Joke:
         if joke.id == normalized:
             return joke
     available = ", ".join(ids())
-    raise KeyError(f"Piada '{joke_id}' nao encontrada. Disponiveis: {available}")
+    raise KeyError(f"Piada '{joke_id}' não encontrada. Disponíveis: {available}")
 
 
 def random(tags: Iterable[str] | None = None) -> Joke:
-    """Retorna uma piada aleatoria, opcionalmente filtrada por tags."""
+    """Retorna uma piada aleatória, opcionalmente filtrada por tags."""
 
     pool = _JOKES
     if tags is not None:
@@ -118,7 +118,7 @@ def tell(joke_id: str | None = None, *, tags: Iterable[str] | None = None) -> st
 
 
 def search(term: str) -> tuple[Joke, ...]:
-    """Procura piadas por texto, porque ate piada ruim precisa de descoberta."""
+    """Procura piadas por texto, porque até piada ruim precisa de descoberta."""
 
     normalized = term.strip().casefold()
     return tuple(
@@ -132,35 +132,35 @@ def search(term: str) -> tuple[Joke, ...]:
 
 
 def direito() -> str:
-    """Atalho para a piada canonica do acervo."""
+    """Atalho para a piada canônica do acervo."""
 
     return by_id("direito").punchline
 
 
 def explain(joke_id: str = "direito") -> str:
-    """Explica a piada, porque algumas tragedias precisam de documentacao."""
+    """Explica a piada, porque algumas tragédias precisam de documentação."""
 
     joke = by_id(joke_id)
     return (
         f"Setup: {joke.setup}\n"
         f"Punchline: {joke.punchline}\n"
-        "Diagnostico: piada ruim com reproducibilidade alta."
+        "Diagnóstico: piada ruim com reproducibilidade alta."
     )
 
 
 def audit() -> dict[str, object]:
-    """Retorna metricas nada cientificas sobre o acervo."""
+    """Retorna métricas nada científicas sobre o acervo."""
 
     return {
         "total": len(_JOKES),
-        "qualidade_media": "questionavel",
+        "qualidade_media": "questionável",
         "risco_social": "alto",
-        "mitigacao": "rir para nao incentivar, mas rir mesmo assim",
+        "mitigação": "rir para não incentivar, mas rir mesmo assim",
     }
 
 
 def cringe_index(joke_id: str | None = None) -> int:
-    """Calcula um indice de vergonha de 0 a 100, com ciencia nenhuma."""
+    """Calcula um índice de vergonha de 0 a 100, com ciência nenhuma."""
 
     joke = random() if joke_id is None else by_id(joke_id)
     return min(100, 42 + len(joke.punchline) + len(joke.tags) * 7)
