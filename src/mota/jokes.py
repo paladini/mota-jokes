@@ -26,8 +26,8 @@ class Joke:
 _JOKES: tuple[Joke, ...] = (
     Joke(
         id="direito",
-        setup="Nossa bicho, já pensou em fazer Direito?",
-        punchline="Pq, tô fazendo errado?",
+        setup="Nossa, bicho, já pensou em fazer Direito?",
+        punchline="Por quê, tô fazendo errado?",
         tags=("clássica", "faculdade", "crime-de-baixa-gravidade"),
     ),
     Joke(
@@ -45,7 +45,7 @@ _JOKES: tuple[Joke, ...] = (
     Joke(
         id="pep8",
         setup="A piada do Mota passou no formatador.",
-        punchline="Mesmo assim o bom senso quebrou em 79 colunas.",
+        punchline="Mesmo assim, o bom senso quebrou em 79 colunas.",
         tags=("python", "pep8"),
     ),
     Joke(
@@ -56,9 +56,9 @@ _JOKES: tuple[Joke, ...] = (
     ),
     Joke(
         id="php",
-        setup="O Mota disse que PHP e uma linguagem elegante.",
+        setup="O Mota disse que PHP é uma linguagem elegante.",
         punchline="A sala retornou HTTP 500.",
-        tags=("php", "opiniao-forte"),
+        tags=("php", "opinião-forte"),
     ),
     Joke(
         id="async",
@@ -69,7 +69,7 @@ _JOKES: tuple[Joke, ...] = (
     Joke(
         id="typing",
         setup="O Mota adicionou type hints na piada.",
-        punchline="Agora ela e ruim de forma estaticamente verificavel.",
+        punchline="Agora ela é ruim de forma estaticamente verificável.",
         tags=("typing", "python"),
     ),
 )
@@ -82,13 +82,13 @@ def all() -> tuple[Joke, ...]:
 
 
 def ids() -> tuple[str, ...]:
-    """Retorna os identificadores disponiveis."""
+    """Retorna os identificadores disponíveis."""
 
     return tuple(joke.id for joke in _JOKES)
 
 
 def by_id(joke_id: str) -> Joke:
-    """Busca uma piada pelo id."""
+    """Busca uma piada pelo ID."""
 
     normalized = joke_id.strip().lower()
     for joke in _JOKES:
@@ -106,7 +106,7 @@ def random(tags: Iterable[str] | None = None) -> Joke:
         wanted = {tag.strip().lower() for tag in tags}
         pool = tuple(joke for joke in _JOKES if wanted.intersection(joke.tags))
     if not pool:
-        raise ValueError("Nenhuma piada encontrada para essas tags. O Mota tentou, falhou, e ainda contou.")
+        raise ValueError("Nenhuma piada encontrada para essas tags. O Mota tentou, falhou e ainda contou.")
     return _random.choice(pool)
 
 
@@ -144,7 +144,7 @@ def explain(joke_id: str = "direito") -> str:
     return (
         f"Setup: {joke.setup}\n"
         f"Punchline: {joke.punchline}\n"
-        "Diagnóstico: piada ruim com reproducibilidade alta."
+        "Diagnóstico: piada ruim com reprodutibilidade alta."
     )
 
 
@@ -153,7 +153,7 @@ def audit() -> dict[str, object]:
 
     return {
         "total": len(_JOKES),
-        "qualidade_media": "questionável",
+        "qualidade_média": "questionável",
         "risco_social": "alto",
         "mitigação": "rir para não incentivar, mas rir mesmo assim",
     }

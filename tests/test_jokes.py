@@ -2,8 +2,8 @@ from mota import jokes
 
 
 def test_direito_punchline_is_canonical():
-    assert jokes.direito() == "Pq, tô fazendo errado?"
-    assert "Pq, tô fazendo errado?" in jokes.tell("direito")
+    assert jokes.direito() == "Por quê, tô fazendo errado?"
+    assert "Por quê, tô fazendo errado?" in jokes.tell("direito")
 
 
 def test_by_id_returns_joke():

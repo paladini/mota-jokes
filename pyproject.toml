@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mota-jokes"
-version = "0.1.0"
+version = "0.1.1"
 description = "Uma biblioteca Python para manter vivas as piadas ruins do Mota."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -30,8 +30,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/seu-usuario/mota-jokes"
-Issues = "https://github.com/seu-usuario/mota-jokes/issues"
+Homepage = "https://github.com/paladini/mota-jokes"
+Repository = "https://github.com/paladini/mota-jokes"
+Issues = "https://github.com/paladini/mota-jokes/issues"
 
 [project.scripts]
 mota = "mota.cli:main"

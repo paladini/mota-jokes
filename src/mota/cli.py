@@ -16,8 +16,8 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="module")
 
     jokes_parser = subparsers.add_parser("jokes", help="Conta e consulta piadas ruins.")
-    jokes_parser.add_argument("id", nargs="?", help="Id da piada. Omita para uma aleatória.")
-    jokes_parser.add_argument("--tags", nargs="*", help="Filtra piadas aleatorias por tags.")
+    jokes_parser.add_argument("id", nargs="?", help="ID da piada. Omita para uma aleatória.")
+    jokes_parser.add_argument("--tags", nargs="*", help="Filtra piadas aleatórias por tags.")
     jokes_parser.add_argument("--audit", action="store_true", help="Mostra métricas nada científicas.")
     jokes_parser.add_argument("--search", help="Procura piadas por texto ou tag.")
 

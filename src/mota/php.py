@@ -19,7 +19,7 @@ _FRAMEWORKS = (
 )
 
 _ECHOES = (
-    "<?php echo 'Pq, to fazendo errado?'; ?>",
+    "<?php echo 'Por quê, tô fazendo errado?'; ?>",
     "<?php var_dump('humor'); // string(5) \"ruim\" ?>",
     "<?php require_once 'bom_senso.php'; // arquivo não encontrado ?>",
     "<?php $mota->contarPiada()->arrependimento(); ?>",
@@ -29,7 +29,7 @@ _INI_VALUES = {
     "display_errors": "On, principalmente em produção, segundo o folclore.",
     "memory_limit": "-1, porque limite é coisa de linguagem sem fé.",
     "date.timezone": "America/Sao_Paulo; ajuste técnico para sofrer no horário certo.",
-    "short_open_tag": "Off, mas a discussao continua ligada.",
+    "short_open_tag": "Off, mas a discussão continua ligada.",
 }
 
 
@@ -54,7 +54,7 @@ def translate(python_code: str) -> str:
         "<?php\n"
         "// Tradução oficial do Mota, certificada por zero comitês.\n"
         f"// Python original: {stripped}\n"
-        "echo 'Funcionou na minha maquina';\n"
+        "echo 'Funcionou na minha máquina';\n"
         "?>"
     )
 
@@ -66,7 +66,7 @@ def framework() -> str:
 
 
 def ini_get(name: str) -> str:
-    """Consulta uma configuracao PHP imaginaria."""
+    """Consulta uma configuração PHP imaginária."""
 
     normalized = name.strip()
     return _INI_VALUES.get(normalized, f"{normalized}=talvez; depende do servidor compartilhado.")
@@ -87,7 +87,7 @@ def composer_install(package: str = "mota/humor") -> str:
     normalized = package.strip() or "mota/humor"
     return (
         f"composer require {normalized}\n"
-        "Package installed. Humor still requires manual configuration."
+        "Pacote instalado. O humor ainda requer configuração manual."
     )
 
 

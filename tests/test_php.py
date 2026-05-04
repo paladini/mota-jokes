@@ -16,6 +16,7 @@ def test_translate_keeps_original_as_comment():
 
 def test_roast_mentions_php():
     assert "PHP" in php.roast()
+    assert "vírgula" in php.roast()
 
 
 def test_semicolon_adds_missing_semicolon():
@@ -27,6 +28,7 @@ def test_composer_install_mentions_package():
     output = php.composer_install("mota/humor")
 
     assert "composer require mota/humor" in output
+    assert "configuração" in output
 
 
 def test_ini_get_has_fake_defaults():
